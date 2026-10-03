@@ -1,0 +1,497 @@
+/* SwapCenterBanner.module.css */
+
+.banner {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #111422 0%, #171b2d 50%, #131d33 100%);
+  border-top: 1px solid rgba(74, 136, 247, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+/* Enforce Exact Heights across breakpoints */
+@media (min-width: 1025px) {
+  .banner {
+    height: 430px;
+    min-height: 430px;
+    max-height: 430px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .banner {
+    height: 460px;
+    min-height: 460px;
+    max-height: 460px;
+  }
+}
+
+@media (max-width: 767px) {
+  .banner {
+    height: 500px;
+    min-height: 500px;
+    max-height: 500px;
+  }
+}
+
+/* Ambient Backdrops */
+.ambientBlueGlow {
+  position: absolute;
+  top: -25%;
+  right: 20%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 136, 247, 0.16) 0%, rgba(59, 130, 246, 0.04) 50%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ambientGoldGlow {
+  position: absolute;
+  bottom: -30%;
+  left: 10%;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(229, 185, 76, 0.1) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.gridPattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+}
+
+/* Left Column */
+.contentCol {
+  flex: 1.1;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tagBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(74, 136, 247, 0.12);
+  border: 1px solid rgba(74, 136, 247, 0.3);
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #70a4fc;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  align-self: flex-start;
+}
+
+.title {
+  font-size: 38px;
+  line-height: 1.15;
+  font-weight: 800;
+  color: #f8fafc;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.8px;
+}
+
+.titleHighlight {
+  background: linear-gradient(135deg, #70a4fc 0%, #4a88f7 50%, #f3cf7a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #94a3b8;
+  margin: 0 0 18px 0;
+}
+
+/* Specs Strip */
+.specsStrip {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.specBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(26, 29, 46, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 5px 11px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #cbd5e1;
+}
+
+.specValue {
+  color: #70a4fc;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+/* CTA Button */
+.ctaButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 28px;
+  background: linear-gradient(135deg, #f3cf7a 0%, #e5b94c 50%, #c99b33 100%);
+  color: #121420;
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(229, 185, 76, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  align-self: flex-start;
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(229, 185, 76, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  background: linear-gradient(135deg, #fced9e 0%, #f3cf7a 50%, #d4a332 100%);
+}
+
+.ctaButton:hover::before {
+  left: 140%;
+}
+
+.ctaButton:hover .ctaIcon {
+  transform: translateX(4px);
+}
+
+.ctaIcon {
+  transition: transform 0.2s ease;
+}
+
+/* Right Column: Swap Center Widget */
+.visualCol {
+  flex: 0.95;
+  max-width: 480px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Floating Satellite Tokens */
+.floatingTokenLeft {
+  position: absolute;
+  top: -12px;
+  left: -10px;
+  z-index: 4;
+  animation: floatSlow 4.2s ease-in-out infinite;
+}
+
+.floatingTokenRight {
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  z-index: 4;
+  animation: floatDelay 4.8s ease-in-out infinite;
+}
+
+/* Swap Center Card */
+.swapCard {
+  width: 100%;
+  max-width: 390px;
+  background: rgba(22, 26, 43, 0.88);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(74, 136, 247, 0.25);
+  border-radius: 18px;
+  padding: 18px 20px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 0 25px rgba(74, 136, 247, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.swapHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.swapTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ratePill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #93c5fd;
+  background: rgba(74, 136, 247, 0.12);
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(74, 136, 247, 0.25);
+}
+
+/* Currency Token Row */
+.tokenRow {
+  background: #121422;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: border-color 0.2s ease;
+}
+
+.tokenRow:hover {
+  border-color: rgba(74, 136, 247, 0.35);
+}
+
+.tokenMeta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tokenInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.tokenSymbol {
+  font-size: 14px;
+  font-weight: 800;
+  color: #f8fafc;
+  letter-spacing: 0.3px;
+}
+
+.tokenLabel {
+  font-size: 11px;
+  color: #64748b;
+}
+
+.amountCol {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.amountInput {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 700;
+  color: #f8fafc;
+  background: transparent;
+  border: none;
+  text-align: right;
+  width: 110px;
+  outline: none;
+}
+
+.amountSubtext {
+  font-size: 11px;
+  color: #64748b;
+  font-family: var(--font-mono);
+}
+
+/* Swap Action Center Divider */
+.swapActionDivider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 6px 0;
+  height: 24px;
+}
+
+.swapDividerLine {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.swapButton {
+  position: relative;
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #1a1e32;
+  border: 1.5px solid rgba(74, 136, 247, 0.4);
+  color: #70a4fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.swapButton:hover {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #93c5fd;
+  transform: rotate(180deg) scale(1.1);
+  box-shadow: 0 0 16px rgba(74, 136, 247, 0.5);
+}
+
+/* Card Micro Footer */
+.swapDetails {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 11px;
+  color: #64748b;
+}
+
+.swapYieldTag {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #34d399;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+/* Responsive Rules */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 28px;
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .swapCard {
+    max-width: 340px;
+    padding: 14px 16px;
+  }
+
+  .floatingTokenLeft {
+    top: -6px;
+    left: -6px;
+  }
+
+  .floatingTokenRight {
+    bottom: -6px;
+    right: -6px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0 18px;
+    gap: 14px;
+  }
+
+  .contentCol {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 26px;
+    margin-bottom: 6px;
+  }
+
+  .description {
+    font-size: 13px;
+    margin-bottom: 12px;
+    max-width: 100%;
+  }
+
+  .specsStrip {
+    justify-content: center;
+    margin-bottom: 12px;
+    gap: 6px;
+  }
+
+  .ctaButton {
+    align-self: center;
+    padding: 10px 22px;
+    font-size: 13px;
+  }
+
+  .visualCol {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .swapCard {
+    max-width: 100%;
+    padding: 12px 14px;
+  }
+
+  .amountInput {
+    font-size: 16px;
+    width: 90px;
+  }
+}

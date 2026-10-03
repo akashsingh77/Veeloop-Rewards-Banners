@@ -1,0 +1,298 @@
+/* ========================================================
+   App.css - Showcase Layout & Navigation
+   Strict Body Background: #161827
+   ======================================================== */
+
+.appWrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #161827;
+  color: #f8fafc;
+}
+
+/* Luxury Fintech Header */
+.appHeader {
+  width: 100%;
+  background: rgba(18, 20, 32, 0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 12px 0;
+}
+
+.headerContainer {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brandGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brandLogo {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #fced9e 0%, #e5b94c 50%, #9e7419 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #121420;
+  font-weight: 900;
+  font-size: 18px;
+  box-shadow: 0 4px 14px rgba(229, 185, 76, 0.35);
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandName {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #f8fafc;
+}
+
+.brandSubtitle {
+  font-size: 11px;
+  color: #94a3b8;
+  letter-spacing: 0.4px;
+}
+
+/* User Live Balances Pill */
+.balancesGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.balanceChip {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(26, 29, 46, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-family: var(--font-mono);
+}
+
+.balanceLabel {
+  color: #94a3b8;
+}
+
+.balanceValGold {
+  color: #f5d37d;
+  font-weight: 700;
+}
+
+.balanceValBlue {
+  color: #70a4fc;
+  font-weight: 700;
+}
+
+.balanceValPurple {
+  color: #d8b4fe;
+  font-weight: 700;
+}
+
+/* Quick Navigation Filter Bar */
+.navPillsBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 0;
+}
+
+.navPillBtn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.navPillBtn:hover {
+  background: rgba(229, 185, 76, 0.15);
+  border-color: rgba(229, 185, 76, 0.35);
+  color: #f5d37d;
+}
+
+.navPillActive {
+  background: rgba(229, 185, 76, 0.2) !important;
+  border-color: #e5b94c !important;
+  color: #f5d37d !important;
+}
+
+/* Banners Stack */
+.bannersStack {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 24px 0 48px;
+  box-sizing: border-box;
+}
+
+.bannerCardWrapper {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.bannerMetaHeader {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto 8px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #64748b;
+  box-sizing: border-box;
+}
+
+.bannerNumber {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: #f5d37d;
+  background: rgba(229, 185, 76, 0.12);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(229, 185, 76, 0.2);
+}
+
+.bannerDimsSpec {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #94a3b8;
+  background: rgba(26, 29, 46, 0.8);
+  padding: 3px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Footer Section */
+.appFooter {
+  width: 100%;
+  background: #111320;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 36px 0;
+  margin-top: auto;
+}
+
+.footerContainer {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footerBrand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footerTitle {
+  font-size: 15px;
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.footerSubtitle {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.themePaletteRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.paletteChip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #94a3b8;
+  font-family: var(--font-mono);
+}
+
+.paletteColorDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .headerContainer {
+    padding: 0 20px;
+  }
+
+  .bannerMetaHeader {
+    padding: 0 24px;
+  }
+
+  .footerContainer {
+    padding: 0 24px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .balancesGroup {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .headerContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 16px;
+    gap: 12px;
+  }
+
+  .bannerMetaHeader {
+    padding: 0 16px;
+    font-size: 11px;
+  }
+
+  .bannerDimsSpec {
+    display: none;
+  }
+
+  .bannersStack {
+    gap: 20px;
+    padding: 16px 0 32px;
+  }
+}

@@ -1,0 +1,145 @@
+/* ========================================================
+   VELOOP REWARDS - DESIGN SYSTEM & GLOBAL STYLES
+   Dark Fintech Theme:
+   - Body Background: #161827 (Strict requirement)
+   - Navy: #1a1d2e, #121420, #22263d
+   - Warm Gold: #e5b94c, #f3cf7a, #c89d35
+   - Soft Blue: #4a88f7, #60a5fa, #38bdf8
+   - Purple Gems: #9b51e0, #8b5cf6, #7c3aed
+   ======================================================== */
+
+:root {
+  --bg-app: #161827;
+  --bg-navy: #1a1d2e;
+  --bg-navy-dark: #121420;
+  --bg-navy-light: #22263d;
+  --bg-navy-card: rgba(26, 29, 46, 0.85);
+  --bg-glass: rgba(22, 24, 39, 0.7);
+
+  --gold-primary: #e5b94c;
+  --gold-hover: #f5d37d;
+  --gold-active: #c99b33;
+  --gold-dark: #8e6c1e;
+  --gold-glow: rgba(229, 185, 76, 0.22);
+  --gold-subtle: rgba(229, 185, 76, 0.1);
+
+  --blue-soft: #4a88f7;
+  --blue-light: #70a4fc;
+  --blue-dark: #2b5cb8;
+  --blue-glow: rgba(74, 136, 247, 0.2);
+  --blue-subtle: rgba(74, 136, 247, 0.1);
+
+  --purple-gem: #9b51e0;
+  --purple-light: #b37feb;
+  --purple-dark: #6e2cb0;
+  --purple-glow: rgba(155, 81, 224, 0.25);
+  --purple-subtle: rgba(155, 81, 224, 0.12);
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-card: rgba(255, 255, 255, 0.11);
+  --border-gold: rgba(229, 185, 76, 0.3);
+  --border-blue: rgba(74, 136, 247, 0.25);
+  --border-purple: rgba(155, 81, 224, 0.3);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-gold: #f3cf7a;
+
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Banner Exact Heights Requirements:
+     Desktop: 410px–450px  -> standard 420px
+     Tablet: 380px–540px   -> standard 460px
+     Mobile: 330px–520px   -> standard 490px
+  */
+  --banner-height-desktop: 425px;
+  --banner-height-tablet: 470px;
+  --banner-height-mobile: 510px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: #161827 !important;
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #161827;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121420;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a3048;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #394264;
+}
+
+/* Floating Animations for Coins & Gems */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+@keyframes floatDelay {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-2deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shimmerEffect {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

@@ -1,0 +1,556 @@
+/* ReferEarnBanner.module.css */
+
+.banner {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #121422 0%, #1a1e32 50%, #151a2d 100%);
+  border-top: 1px solid rgba(229, 185, 76, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Enforce Exact Heights across breakpoints */
+@media (min-width: 1025px) {
+  .banner {
+    height: 440px;
+    min-height: 440px;
+    max-height: 440px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .banner {
+    height: 470px;
+    min-height: 470px;
+    max-height: 470px;
+  }
+}
+
+@media (max-width: 767px) {
+  .banner {
+    height: 510px;
+    min-height: 510px;
+    max-height: 510px;
+  }
+}
+
+/* Ambient Backdrops */
+.ambientGoldGlow {
+  position: absolute;
+  top: -25%;
+  left: 20%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(229, 185, 76, 0.15) 0%, rgba(229, 185, 76, 0.03) 50%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ambientBlueGlow {
+  position: absolute;
+  bottom: -20%;
+  right: 10%;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 136, 247, 0.12) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.gridPattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Main Container */
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 16px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+/* Top Section: Split into Left (Copy & Split Rewards) and Right (Copy Card) */
+.topSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  flex: 1;
+}
+
+/* Left Column */
+.contentCol {
+  flex: 1.1;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tagBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 13px;
+  background: rgba(229, 185, 76, 0.12);
+  border: 1px solid rgba(229, 185, 76, 0.3);
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #f5d37d;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+
+.title {
+  font-size: 34px;
+  line-height: 1.15;
+  font-weight: 800;
+  color: #f8fafc;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.8px;
+}
+
+.titleHighlight {
+  background: linear-gradient(135deg, #fced9e 0%, #e5b94c 50%, #70a4fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #94a3b8;
+  margin: 0 0 14px 0;
+}
+
+/* Split Rewards Visual Cards */
+.splitRewardsRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.rewardCardYou,
+.rewardCardFriend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: rgba(26, 30, 48, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.rewardCardYou {
+  border-color: rgba(229, 185, 76, 0.3);
+  background: rgba(229, 185, 76, 0.08);
+}
+
+.rewardCardFriend {
+  border-color: rgba(74, 136, 247, 0.3);
+  background: rgba(74, 136, 247, 0.08);
+}
+
+.rewardMeta {
+  display: flex;
+  flex-direction: column;
+}
+
+.rewardLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.rewardValueYou {
+  font-size: 16px;
+  font-weight: 800;
+  color: #f5d37d;
+  font-family: var(--font-mono);
+}
+
+.rewardValueFriend {
+  font-size: 16px;
+  font-weight: 800;
+  color: #70a4fc;
+  font-family: var(--font-mono);
+}
+
+.rewardPlus {
+  font-size: 16px;
+  font-weight: 700;
+  color: #64748b;
+}
+
+/* CTA Button */
+.ctaButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 26px;
+  background: linear-gradient(135deg, #f3cf7a 0%, #e5b94c 50%, #c99b33 100%);
+  color: #121420;
+  font-family: var(--font-main);
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(229, 185, 76, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  align-self: flex-start;
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(229, 185, 76, 0.48), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  background: linear-gradient(135deg, #fced9e 0%, #f3cf7a 50%, #d4a332 100%);
+}
+
+.ctaButton:hover::before {
+  left: 140%;
+}
+
+.ctaButton:hover .ctaIcon {
+  transform: translateX(4px);
+}
+
+.ctaIcon {
+  transition: transform 0.2s ease;
+}
+
+/* Right Column: Referral Code Copy Card & Floating Assets */
+.visualCol {
+  flex: 0.9;
+  max-width: 440px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Floating Satellite Items */
+.floatingCoinTop {
+  position: absolute;
+  top: -12px;
+  right: 10px;
+  z-index: 4;
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.floatingGemBottom {
+  position: absolute;
+  bottom: -6px;
+  left: 5px;
+  z-index: 4;
+  animation: floatDelay 4.6s ease-in-out infinite;
+}
+
+/* Code Copy Card */
+.codeCard {
+  width: 100%;
+  max-width: 360px;
+  background: rgba(22, 26, 43, 0.88);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(229, 185, 76, 0.3);
+  border-radius: 16px;
+  padding: 16px 18px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 0 25px rgba(229, 185, 76, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cardHeaderTitle {
+  font-size: 12px;
+  font-weight: 700;
+  color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tierPill {
+  font-size: 10px;
+  font-weight: 700;
+  color: #f5d37d;
+  background: rgba(229, 185, 76, 0.14);
+  padding: 2px 7px;
+  border-radius: 4px;
+  border: 1px solid rgba(229, 185, 76, 0.25);
+}
+
+/* Code Box */
+.codeBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #111320;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 9px 12px;
+  margin-bottom: 10px;
+}
+
+.codeText {
+  font-family: var(--font-mono);
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #f5d37d;
+}
+
+.copyBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #252b45;
+  border: 1px solid rgba(229, 185, 76, 0.35);
+  color: #f8fafc;
+  padding: 7px 12px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copyBtn:hover {
+  background: rgba(229, 185, 76, 0.25);
+  border-color: #f5d37d;
+  color: #fced9e;
+}
+
+.copySuccess {
+  background: #065f46 !important;
+  border-color: #10b981 !important;
+  color: #d1fae5 !important;
+}
+
+.cardFooterText {
+  font-size: 11px;
+  color: #64748b;
+  text-align: center;
+}
+
+/* Bottom 4-Feature Benefit Strip */
+.benefitStrip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  width: 100%;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(22, 26, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 7px 12px;
+  border-radius: 8px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.benefitItem:hover {
+  background: rgba(26, 31, 52, 0.85);
+  border-color: rgba(229, 185, 76, 0.25);
+}
+
+.benefitIconBox {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(26, 30, 48, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.benefitTextGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.benefitTitle {
+  font-size: 12px;
+  font-weight: 700;
+  color: #f1f5f9;
+  line-height: 1.2;
+}
+
+.benefitDesc {
+  font-size: 10px;
+  color: #94a3b8;
+  line-height: 1.2;
+}
+
+/* Responsive Rules */
+@media (max-width: 1024px) {
+  .container {
+    padding: 12px 28px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .topSection {
+    gap: 20px;
+  }
+
+  .codeCard {
+    max-width: 310px;
+    padding: 12px 14px;
+  }
+
+  .benefitStrip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .benefitItem {
+    padding: 5px 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 10px 16px;
+    justify-content: center;
+  }
+
+  .topSection {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .contentCol {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+
+  .description {
+    display: none;
+  }
+
+  .splitRewardsRow {
+    margin-bottom: 10px;
+    gap: 8px;
+  }
+
+  .rewardCardYou,
+  .rewardCardFriend {
+    padding: 5px 10px;
+  }
+
+  .rewardValueYou,
+  .rewardValueFriend {
+    font-size: 14px;
+  }
+
+  .ctaButton {
+    align-self: center;
+    padding: 9px 20px;
+    font-size: 12px;
+  }
+
+  .visualCol {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .codeCard {
+    max-width: 100%;
+    padding: 10px 12px;
+  }
+
+  .codeText {
+    font-size: 16px;
+  }
+
+  .benefitStrip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    padding-top: 8px;
+  }
+
+  .benefitItem {
+    padding: 4px 8px;
+  }
+
+  .benefitTitle {
+    font-size: 11px;
+  }
+
+  .benefitDesc {
+    display: none;
+  }
+
+  .floatingCoinTop,
+  .floatingGemBottom {
+    display: none;
+  }
+}

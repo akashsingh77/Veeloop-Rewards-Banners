@@ -1,0 +1,537 @@
+/* ExchangeCenterBanner.module.css */
+
+.banner {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #111322 0%, #171a2e 50%, #1e1533 100%);
+  border-top: 1px solid rgba(155, 81, 224, 0.25);
+  border-bottom: 1px solid rgba(229, 185, 76, 0.2);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+/* Enforce Exact Heights across breakpoints */
+@media (min-width: 1025px) {
+  .banner {
+    height: 430px;
+    min-height: 430px;
+    max-height: 430px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .banner {
+    height: 460px;
+    min-height: 460px;
+    max-height: 460px;
+  }
+}
+
+@media (max-width: 767px) {
+  .banner {
+    height: 500px;
+    min-height: 500px;
+    max-height: 500px;
+  }
+}
+
+/* Ambient Backdrops */
+.ambientPurpleGlow {
+  position: absolute;
+  top: -20%;
+  right: 30%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(155, 81, 224, 0.16) 0%, rgba(126, 34, 206, 0.04) 50%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ambientGoldGlow {
+  position: absolute;
+  bottom: -25%;
+  right: 5%;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(229, 185, 76, 0.14) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.gridPattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+}
+
+/* Left Column */
+.contentCol {
+  flex: 1.1;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tagBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(155, 81, 224, 0.14);
+  border: 1px solid rgba(155, 81, 224, 0.35);
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #d8b4fe;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  align-self: flex-start;
+}
+
+.title {
+  font-size: 38px;
+  line-height: 1.15;
+  font-weight: 800;
+  color: #f8fafc;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.8px;
+}
+
+.titleHighlight {
+  background: linear-gradient(135deg, #d8b4fe 0%, #a855f7 40%, #e5b94c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #94a3b8;
+  margin: 0 0 18px 0;
+}
+
+/* Highlights Strip */
+.highlightsStrip {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.highlightPill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(26, 29, 46, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #cbd5e1;
+}
+
+.highlightValue {
+  color: #f5d37d;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+/* CTA Golden Button */
+.ctaButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 28px;
+  background: linear-gradient(135deg, #f3cf7a 0%, #e5b94c 50%, #c99b33 100%);
+  color: #121420;
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(229, 185, 76, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  align-self: flex-start;
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(229, 185, 76, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  background: linear-gradient(135deg, #fced9e 0%, #f3cf7a 50%, #d4a332 100%);
+}
+
+.ctaButton:hover::before {
+  left: 140%;
+}
+
+.ctaButton:hover .ctaIcon {
+  transform: translateX(4px);
+}
+
+.ctaIcon {
+  transition: transform 0.2s ease;
+}
+
+/* Right Column: Exchange Flow Visual */
+.visualCol {
+  flex: 0.95;
+  max-width: 480px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Floating Satellite Items */
+.floatingGemTop {
+  position: absolute;
+  top: -14px;
+  right: 25px;
+  z-index: 4;
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.floatingCoinBottom {
+  position: absolute;
+  bottom: -10px;
+  left: 15px;
+  z-index: 4;
+  animation: floatDelay 4.6s ease-in-out infinite;
+}
+
+/* Exchange Stage Card */
+.exchangeCard {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(22, 25, 41, 0.88);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(155, 81, 224, 0.3);
+  border-radius: 18px;
+  padding: 18px 20px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 0 25px rgba(155, 81, 224, 0.12);
+  position: relative;
+  z-index: 2;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.headerTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badgeLive {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #a855f7;
+  background: rgba(168, 85, 247, 0.14);
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(168, 85, 247, 0.25);
+}
+
+/* Flow Conduit (Gem Node -> Animated Pipeline -> VE Node) */
+.flowConduit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #111422;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 14px 12px;
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.flowNode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 90px;
+}
+
+.nodeIconWrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(26, 29, 46, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.nodeAmount {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.nodeLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* Animated Flow Bridge Pipeline */
+.flowBridge {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  position: relative;
+}
+
+.ratePill {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: #f5d37d;
+  background: rgba(229, 185, 76, 0.12);
+  border: 1px solid rgba(229, 185, 76, 0.3);
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+  white-space: nowrap;
+}
+
+.flowPipeline {
+  width: 100%;
+  height: 4px;
+  background: #1e243a;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.flowPulse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, #a855f7, #e5b94c, transparent);
+  animation: pulseMove 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes pulseMove {
+  0% {
+    left: -40%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.flowArrow {
+  margin-top: 6px;
+  color: #94a3b8;
+}
+
+/* Amount Selector Range Slider */
+.sliderSection {
+  background: #141727;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+}
+
+.sliderHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #94a3b8;
+  margin-bottom: 6px;
+}
+
+.sliderValueText {
+  color: #d8b4fe;
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.sliderInput {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #252a42;
+  outline: none;
+  cursor: pointer;
+  accent-color: #a855f7;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #64748b;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.instantTag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #10b981;
+  font-weight: 600;
+}
+
+/* Responsive Rules */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 28px;
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .exchangeCard {
+    max-width: 350px;
+    padding: 14px 16px;
+  }
+
+  .floatingGemTop {
+    top: -8px;
+    right: 10px;
+  }
+
+  .floatingCoinBottom {
+    bottom: -6px;
+    left: 8px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0 18px;
+    gap: 14px;
+  }
+
+  .contentCol {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 26px;
+    margin-bottom: 6px;
+  }
+
+  .description {
+    font-size: 13px;
+    margin-bottom: 12px;
+    max-width: 100%;
+  }
+
+  .highlightsStrip {
+    justify-content: center;
+    margin-bottom: 12px;
+    gap: 6px;
+  }
+
+  .ctaButton {
+    align-self: center;
+    padding: 10px 22px;
+    font-size: 13px;
+  }
+
+  .visualCol {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .exchangeCard {
+    max-width: 100%;
+    padding: 12px 14px;
+  }
+
+  .flowNode {
+    min-width: 70px;
+  }
+
+  .nodeIconWrapper {
+    width: 42px;
+    height: 42px;
+  }
+
+  .nodeAmount {
+    font-size: 12px;
+  }
+}
